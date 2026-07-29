@@ -1,0 +1,139 @@
+.lyrics-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+  padding: 24px;
+}
+
+.lyrics-overlay.is-open {
+  display: flex;
+}
+
+.lyrics-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 12, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.lyrics-panel {
+  position: relative;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: rgba(7, 10, 15, 0.86);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.lyrics-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lyrics-artwork img {
+  width: 96px;
+  height: 96px;
+}
+
+.close-lyrics {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.lyrics-mode-switch,
+.transpose-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.mode-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
+.mode-pill.active {
+  background: var(--accent);
+  color: white;
+}
+
+.transpose-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.transpose-buttons button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+}
+
+.transpose-buttons button.active {
+  background: var(--accent);
+  color: white;
+}
+
+.lyrics-content {
+  padding: 16px 0 4px;
+  display: grid;
+  gap: 12px;
+}
+
+.lyric-line {
+  font-size: 1.08rem;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.lyric-line.is-current {
+  color: white;
+  font-size: 1.28rem;
+  transform: translateX(6px);
+}
+
+.lyric-line.is-prev {
+  opacity: 0.6;
+}
+
+.lyric-line.is-next {
+  opacity: 0.8;
+}
+
+.lyrics-progress-row {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lyrics-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.lyrics-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  transition: width 0.2s ease;
+}
