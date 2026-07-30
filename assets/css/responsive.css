@@ -55,3 +55,152 @@
     width: 100%;
   }
 }
+
+@media (max-width: 640px) {
+  .bottom-player {
+    padding: 10px 12px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+
+  .player-main {
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .player-artwork-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .expand-toggle {
+    display: inline-grid;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-track-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .player-track-info p {
+    font-size: 0.82rem;
+  }
+
+  .player-controls,
+  .player-timeline,
+  .player-actions {
+    width: 100%;
+  }
+
+  .player-controls {
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .player-timeline,
+  .player-actions {
+    display: none;
+  }
+
+  .bottom-player.expanded .player-timeline,
+  .bottom-player.expanded .player-actions {
+    display: flex;
+  }
+
+  .bottom-player.expanded .player-controls {
+    justify-content: center;
+  }
+
+  .volume-control {
+    min-width: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .volume-control input {
+    width: 100%;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bottom-player {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 18px;
+  }
+
+  .player-main,
+  .player-controls,
+  .player-timeline,
+  .player-actions {
+    width: 100%;
+  }
+
+  .player-main {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .player-artwork-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .play-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .player-track-info {
+    min-width: 0;
+  }
+
+  .player-track-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .player-track-info p {
+    font-size: 0.82rem;
+  }
+
+  .player-controls {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .player-timeline {
+    order: 4;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .player-actions {
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .volume-control {
+    min-width: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .volume-control input {
+    width: 100%;
+    max-width: 120px;
+  }
+
+  .player-love {
+    margin-left: auto;
+  }
+}

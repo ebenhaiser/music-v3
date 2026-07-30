@@ -46,6 +46,9 @@ function bindEvents() {
   elements.seekBar?.addEventListener("input", handleSeek);
   elements.volumeControl?.addEventListener("input", handleVolume);
   document.addEventListener("playSelectedSong", handlePlaySelectedSong);
+  document
+    .getElementById("bottomPlayerToggle")
+    ?.addEventListener("click", toggleBottomPlayer);
 
   audio.addEventListener("timeupdate", updateTimeDisplay);
   audio.addEventListener("ended", handleSongEnd);
@@ -146,6 +149,21 @@ function updateTimeDisplay() {
       detail: { currentTime, duration: audio.duration || 0 },
     }),
   );
+}
+
+function toggleBottomPlayer() {
+  const bottomPlayer = document.querySelector(".bottom-player");
+  const toggleButton = document.getElementById("bottomPlayerToggle");
+  if (!bottomPlayer || !toggleButton) return;
+
+  const isExpanded = bottomPlayer.classList.toggle("expanded");
+  toggleButton.setAttribute("aria-expanded", String(isExpanded));
+  toggleButton
+    .querySelector("i")
+    ?.classList.toggle("fa-chevron-up", !isExpanded);
+  toggleButton
+    .querySelector("i")
+    ?.classList.toggle("fa-chevron-down", isExpanded);
 }
 
 function updateButtonStates() {

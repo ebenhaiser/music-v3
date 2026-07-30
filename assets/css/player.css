@@ -89,6 +89,10 @@ body.theme-light .bottom-player {
   justify-content: flex-end;
 }
 
+.expand-toggle {
+  display: none;
+}
+
 .volume-control {
   display: flex;
   align-items: center;
