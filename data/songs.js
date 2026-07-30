@@ -1,10 +1,10 @@
 const songs = [
   {
     id: 1,
-    title: "Pelangi Setelah Hujan",
-    artist: "Eben",
+    title: "Pelangi Sehabis Hujan",
+    artist: "Caprisiano",
     artwork: "assets/artwork/pelangi.svg",
-    audio: "assets/audio/pelangi.mp3",
+    audio: "data/audio/Pelangi Sehabis Hujan.mp3",
     lyric: "assets/lyric/pelangi.lrc",
     chord: "assets/chord/pelangi.chord",
     genre: "Island Reggae",

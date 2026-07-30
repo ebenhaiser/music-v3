@@ -5,6 +5,9 @@ const detailOverlay = document.getElementById("songDetailOverlay");
 const detailContent = document.getElementById("songDetailContent");
 const closeDetail = document.getElementById("closeDetail");
 const searchInput = document.getElementById("songSearch");
+const searchToggle = document.getElementById("searchToggle");
+const menuToggle = document.getElementById("menuToggle");
+const topnav = document.querySelector(".topnav");
 const sortSelect = document.getElementById("sortSelect");
 const themeToggle = document.getElementById("themeToggle");
 
@@ -23,6 +26,8 @@ export function initializeUI() {
 
 function bindEvents() {
   searchInput?.addEventListener("input", handleSearch);
+  searchToggle?.addEventListener("click", toggleSearch);
+  menuToggle?.addEventListener("click", toggleMenu);
   sortSelect?.addEventListener("change", handleSort);
   themeToggle?.addEventListener("click", toggleTheme);
   closeDetail?.addEventListener("click", closeSongDetail);
@@ -46,6 +51,24 @@ function handleSearch(event) {
   });
   currentSongs = filtered;
   renderSongs();
+}
+
+function toggleSearch() {
+  const searchField = document.querySelector(".search-field");
+  const isActive = searchField?.classList.toggle("active");
+  if (searchToggle && typeof isActive !== "undefined") {
+    searchToggle.setAttribute("aria-expanded", String(isActive));
+  }
+  if (isActive && searchInput) {
+    setTimeout(() => searchInput.focus(), 0);
+  }
+}
+
+function toggleMenu() {
+  const isExpanded = topnav?.classList.toggle("expanded");
+  if (menuToggle && typeof isExpanded !== "undefined") {
+    menuToggle.setAttribute("aria-expanded", String(isExpanded));
+  }
 }
 
 function handleSort(event) {

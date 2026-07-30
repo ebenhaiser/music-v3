@@ -124,6 +124,11 @@ select {
   min-width: 240px;
 }
 
+.search-toggle,
+.menu-toggle {
+  display: none;
+}
+
 .search-field input {
   border: 0;
   outline: 0;
